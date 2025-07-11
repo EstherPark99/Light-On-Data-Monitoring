@@ -36,6 +36,31 @@
             font-weight: 300;
         }
 
+        .header-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .esp-status-btn {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .esp-status-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+        }
+
         .status-bar {
             display: flex;
             justify-content: space-between;
@@ -157,12 +182,22 @@
                 flex-direction: column;
                 gap: 10px;
             }
+
+            .header-controls {
+                flex-direction: column;
+                gap: 15px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Light-On Data Monitoring System</h1>
+        <div class="header-controls">
+            <h1>Light-On Data Monitoring System</h1>
+            <button class="esp-status-btn" onclick="window.open('esp-status.html', '_blank')">
+                📡 ESP 상태 확인
+            </button>
+        </div>
         
         <div class="status-bar">
             <div class="status-indicator">
@@ -231,11 +266,7 @@
     </div>
 
     <!-- Firebase SDK -->
-    <script type="module" src="./js/config.js"></script>
-    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="public/js/config.js"></script>
+    <script type="module" src="public/js/main.js"></script>
 </body>
 </html>
-
-
-
-
